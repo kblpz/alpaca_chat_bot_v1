@@ -1,6 +1,8 @@
 import streamlit as st
-from bot import chat_with_alpaca 
+from streamlit.components.v1 import html
+from bot import chat_with_alpaca
 
+html(f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>')
 st.set_page_config(page_title="Alpaca Chatbot")
 with open("./style.css") as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
