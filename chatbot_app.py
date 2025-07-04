@@ -2,7 +2,17 @@ import streamlit as st
 from streamlit.components.v1 import html
 from bot import chat_with_alpaca
 
-html(f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>')
+
+my_js = """
+<script>function resize() { var height = document.getElementsByTagName("html")[0].scrollHeight; window.parent.postMessage(["setHeight", height], "*"); }
+document.addEventListener('DOMContentLoaded', function() {
+      resize();
+      setInterval(resize, 1000);
+    })
+</script>
+"""
+# html(f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>')
+html(f'')
 st.set_page_config(page_title="Alpaca Chatbot")
 with open("./style.css") as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
