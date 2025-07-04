@@ -4,13 +4,12 @@ from bot import chat_with_alpaca
 
 
 my_js = """
-document.addEventListener('DOMContentLoaded', function() {
 function resize() { 
 try {
 var height1 = document.querySelector(".stMainBlockContainer")?.clientHeight; var height2 = document.querySelector('div[data-testid="stBottomBlockContainer"]').clientHeight; console.log(height1 + height2); window.parent.postMessage(["setHeight", height1 + height2], "*"); 
 } catch(e) {}
 }
-    
+document.addEventListener('DOMContentLoaded', function() {
       resize();
       setInterval(resize, 200);
       alert('1');
@@ -48,4 +47,4 @@ for speaker, message in st.session_state.history:
         with st.chat_message("assistant", avatar='./alpaca.png'):
             st.markdown(message)
 # st.markdown(my_html, unsafe_allow_html=True)
-html(my_html)
+# html(my_html)
