@@ -40,7 +40,9 @@ div[data-testid="stBottomBlockContainer"] {
     min-height: 3.5rem;
 }
 
-
+div[data-testid="stBottom"] {
+    position: static !important;
+}
 
 header {
     display: none !important;
