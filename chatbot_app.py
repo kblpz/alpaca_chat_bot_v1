@@ -3,14 +3,15 @@ from streamlit.components.v1 import html
 from bot import chat_with_alpaca
 
 
-my_js = """
-function resize() { var height = document.getElementsByTagName("html")[0].scrollHeight; window.parent.postMessage(["setHeight", height], "*"); }
-document.addEventListener('DOMContentLoaded', function() {
-      resize();
-      setInterval(resize, 1000);
-    })
-"""
-my_html = f"<script>{my_js}</script>"
+# my_js = """
+# function resize() { var height = document.getElementsByTagName("html")[0].scrollHeight; window.parent.postMessage(["setHeight", height], "*"); }
+# document.addEventListener('DOMContentLoaded', function() {
+#       resize();
+#       setInterval(resize, 1000);
+#     })
+# """
+# my_html = f"<script>{my_js}</script>"
+my_html = f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>'
 st.markdown(my_html, unsafe_allow_html=True)
 
 # html(f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>')
