@@ -4,15 +4,15 @@ from bot import chat_with_alpaca
 
 
 my_js = """
-<script>function resize() { var height = document.getElementsByTagName("html")[0].scrollHeight; window.parent.postMessage(["setHeight", height], "*"); }
+function resize() { var height = document.getElementsByTagName("html")[0].scrollHeight; window.parent.postMessage(["setHeight", height], "*"); }
 document.addEventListener('DOMContentLoaded', function() {
       resize();
       setInterval(resize, 1000);
     })
-</script>
 """
+my_html = f"<script>{my_js}</script>"
 # html(f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>')
-html(my_js)
+html(my_html)
 st.set_page_config(page_title="Alpaca Chatbot")
 with open("./style.css") as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
