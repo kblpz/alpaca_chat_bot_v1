@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 """
 my_html = f"<script>{my_js}</script>"
+st.markdown(my_html, unsafe_allow_html=True)
+
 # html(f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>')
-html(my_html)
+# html(my_html)
 st.set_page_config(page_title="Alpaca Chatbot")
 with open("./style.css") as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
