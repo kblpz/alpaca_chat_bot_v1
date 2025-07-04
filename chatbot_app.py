@@ -21,8 +21,8 @@ my_html = f"<script>{my_js}</script>"
 st.set_page_config(page_title="Alpaca Chatbot")
 with open("./style.css") as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
-st.title("Alpaca AI")
-st.subheader("Ask about the system, the site — or how Alpaca can boost your clinic")
+# st.title("Alpaca AI")
+# st.subheader("Ask about the system, the site — or how Alpaca can boost your clinic")
 
 # Initialize session state
 if "history" not in st.session_state:
