@@ -4,7 +4,7 @@ from bot import chat_with_alpaca
 
 
 my_js = """
-function resize() { var height = document.getElementsByTagName("html")[0].scrollHeight; console.log(height); window.postMessage(["setHeight", height], "*"); }
+function resize() { var height1 = document.querySelector(".stMainBlockContainer").clientHeight; var height2 = document.querySelector('div[data-testid="stBottomBlockContainer"]').clientHeight; console.log(height1 + height2); window.parent.postMessage(["setHeight", height1 + height2], "*"); }
 document.addEventListener('DOMContentLoaded', function() {
       resize();
       setInterval(resize, 1000);
