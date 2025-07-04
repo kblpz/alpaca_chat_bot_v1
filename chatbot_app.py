@@ -42,5 +42,6 @@ for speaker, message in st.session_state.history:
     else:
         with st.chat_message("assistant", avatar='./alpaca.png'):
             st.markdown(message)
-# st.markdown(my_html, unsafe_allow_html=True)
-html(my_html)
+st.markdown(my_html, unsafe_allow_html=True)
+# html(my_html)
+#
