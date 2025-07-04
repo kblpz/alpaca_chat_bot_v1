@@ -7,11 +7,11 @@ my_js = """
 function resize() { var height1 = document.querySelector(".stMainBlockContainer").clientHeight; var height2 = document.querySelector('div[data-testid="stBottomBlockContainer"]').clientHeight; console.log(height1 + height2); window.parent.postMessage(["setHeight", height1 + height2], "*"); }
 document.addEventListener('DOMContentLoaded', function() {
       resize();
-      setInterval(resize, 1000);
+      setInterval(resize, 200);
+      alert('1');
     })
 """
 my_html = f"<script>{my_js}</script>"
-st.markdown(my_html, unsafe_allow_html=True)
 
 # html(f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>')
 # html(my_html)
@@ -43,3 +43,4 @@ for speaker, message in st.session_state.history:
     else:
         with st.chat_message("assistant", avatar='./alpaca.png'):
             st.markdown(message)
+st.markdown(my_html, unsafe_allow_html=True)
