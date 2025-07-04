@@ -1,21 +1,21 @@
 import streamlit as st
-from streamlit.components.v1 import html
+# from streamlit.components.v1 import html
 from bot import chat_with_alpaca
 
-
-my_js = """
-function resize() { 
-try {
-var height1 = document.querySelector(".stMainBlockContainer")?.clientHeight; var height2 = document.querySelector('div[data-testid="stBottomBlockContainer"]').clientHeight; console.log(height1 + height2); window.parent.postMessage(["setHeight", height1 + height2], "*"); 
-} catch(e) {}
-}
-document.addEventListener('DOMContentLoaded', function() {
-      resize();
-      setInterval(resize, 200);
-      alert('1');
-    })
-"""
-my_html = f"<script>{my_js}</script>"
+#
+# my_js = """
+# function resize() {
+# try {
+# var height1 = document.querySelector(".stMainBlockContainer")?.clientHeight; var height2 = document.querySelector('div[data-testid="stBottomBlockContainer"]').clientHeight; console.log(height1 + height2); window.parent.postMessage(["setHeight", height1 + height2], "*");
+# } catch(e) {}
+# }
+# document.addEventListener('DOMContentLoaded', function() {
+#       resize();
+#       setInterval(resize, 200);
+#       alert('1');
+#     })
+# """
+# my_html = f"<script>{my_js}</script>"
 
 # html(f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>')
 st.set_page_config(page_title="Alpaca Chatbot")
