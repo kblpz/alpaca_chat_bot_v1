@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 """
 # html(f'<script src="https://cdn.jsdelivr.net/npm/@iframe-resizer/child@5.4.6"></script>')
-html(f'')
+html(my_js)
 st.set_page_config(page_title="Alpaca Chatbot")
 with open("./style.css") as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
